@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts.bak
+
+# env (nunca commitar segredos)
+.env
+.env.local
+.env*.local
+
+# misc
+*.log
+.DS_Store
+dev.log
+server.log

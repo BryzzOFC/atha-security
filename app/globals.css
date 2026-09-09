@@ -1,0 +1,451 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-fade: var(--fade-bg);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* ATHA brand */
+  --color-brand-blue: #4d9fff;
+  --color-brand-blue-deep: #1e63d0;
+  --color-brand-orange: #ff8a2b;
+  --color-brand-cyan: #40cdff;
+  --color-brand-violet: #886cff;
+  --color-ink-950: #05060a;
+  --color-ink-900: #080a10;
+  --color-ink-850: #0b0e15;
+  --color-ink-800: #10141d;
+  --color-ink-700: #1a2030;
+}
+
+/*
+ * Theme tokens — LIGHT is the default (clean white canvas) and `html.dark`
+ * carries the deep enterprise night. The background stays strictly black
+ * & white in both themes: no hue in the canvas, only neutral light/shadow.
+ */
+:root {
+  --radius: 0.625rem;
+  --background: #f7f9ff;
+  --foreground: #0b1220;
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --popover: #ffffff;
+  --popover-foreground: #0b1220;
+  --primary: #0b1220;
+  --primary-foreground: #ffffff;
+  --secondary: #eef2fb;
+  --secondary-foreground: #16203a;
+  --muted: #eef2fb;
+  --muted-foreground: #56678a;
+  --accent: #e8efff;
+  --accent-foreground: #0b1220;
+  --destructive: #e5484d;
+  --border: rgba(11, 18, 32, 0.1);
+  --input: rgba(11, 18, 32, 0.12);
+  --ring: rgba(77, 159, 255, 0.55);
+  --chart-1: #4d9fff;
+  --chart-2: #ff8a2b;
+  --chart-3: #40cdff;
+  --chart-4: #ffb36b;
+  --chart-5: #886cff;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b1220;
+  --sidebar-primary: #1e63d0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8efff;
+  --sidebar-accent-foreground: #0b1220;
+  --sidebar-border: rgba(11, 18, 32, 0.1);
+  --sidebar-ring: rgba(77, 159, 255, 0.55);
+
+  /* aurora — strictly monochrome depth over the light canvas */
+  --aur-base: #f7f9ff;
+  --aur-clear: rgba(247, 249, 255, 0.88);
+  --aur-1: rgba(11, 18, 32, 0.05);
+  --aur-2: rgba(11, 18, 32, 0.035);
+  --aur-3: rgba(11, 18, 32, 0.04);
+  --aur-4: rgba(11, 18, 32, 0.03);
+  --fade-bg: 247, 249, 255;
+  --grid-line: rgba(11, 18, 32, 0.055);
+  --hero-text-shadow: 0 1px 3px rgba(247, 249, 255, 0.6), 0 6px 30px rgba(190, 205, 235, 0.55);
+  /* brand mark (BrandMark.tsx) — deeper gradient so it pops on white */
+  --mark-line: rgba(11, 18, 32, 0.2);
+  --mark-fill: rgba(11, 18, 32, 0.035);
+  --mark-1: #1e63d0;
+  --mark-2: #4d9fff;
+}
+
+.dark {
+  --background: #05060a;
+  --foreground: #f2f5f7;
+  --card: #0a0d13;
+  --card-foreground: #f2f5f7;
+  --popover: #0b0e15;
+  --popover-foreground: #f2f5f7;
+  --primary: #f2f5f7;
+  --primary-foreground: #05060a;
+  --secondary: #12161f;
+  --secondary-foreground: #e8ecf0;
+  --muted: #12161f;
+  --muted-foreground: #9aa6b2;
+  --accent: #10141d;
+  --accent-foreground: #f2f5f7;
+  --destructive: #ff5a5a;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: rgba(77, 159, 255, 0.6);
+  --chart-1: #4d9fff;
+  --chart-2: #ff8a2b;
+  --chart-3: #7fd0ff;
+  --chart-4: #ffb36b;
+  --chart-5: #9aa6b2;
+  --sidebar: #080a10;
+  --sidebar-foreground: #f2f5f7;
+  --sidebar-primary: #4d9fff;
+  --sidebar-primary-foreground: #05060a;
+  --sidebar-accent: #10141d;
+  --sidebar-accent-foreground: #f2f5f7;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: rgba(77, 159, 255, 0.6);
+
+  /* aurora — soft white light over the deep night, never colored */
+  --aur-base: #05060a;
+  --aur-clear: rgba(5, 6, 10, 0.5);
+  --aur-1: rgba(255, 255, 255, 0.09);
+  --aur-2: rgba(255, 255, 255, 0.06);
+  --aur-3: rgba(255, 255, 255, 0.075);
+  --aur-4: rgba(255, 255, 255, 0.05);
+  --fade-bg: 5, 6, 10;
+  --grid-line: rgba(255, 255, 255, 0.045);
+  --hero-text-shadow: 0 2px 26px rgba(6, 12, 26, 0.5), 0 1px 4px rgba(6, 12, 26, 0.32);
+  /* brand mark — original light-blue gradient for the dark canvas */
+  --mark-line: rgba(255, 255, 255, 0.18);
+  --mark-fill: rgba(255, 255, 255, 0.03);
+  --mark-1: #7fd0ff;
+  --mark-2: #4d9fff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: light;
+    scroll-behavior: auto;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01" on, "cv01" on;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: rgba(77, 159, 255, 0.32);
+    color: var(--foreground);
+  }
+  :focus-visible {
+    outline: 2px solid rgba(77, 159, 255, 0.85);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--foreground) 18%, transparent);
+    border-radius: 8px;
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--foreground) 30%, transparent);
+  }
+}
+
+/* ---------- ATHA utilities ---------- */
+
+.glass-panel {
+  background: color-mix(in oklab, var(--card) 55%, transparent);
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hairline {
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 54px 54px;
+}
+
+.grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 35%, black 25%, transparent 78%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 35%, black 25%, transparent 78%);
+}
+
+.kicker {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.num-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* status dots */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.45);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 5px rgba(74, 222, 128, 0);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-dot-blue {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(77, 159, 255, 0.45);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 5px rgba(77, 159, 255, 0);
+  }
+}
+.pulse-dot-blue {
+  animation: pulse-dot-blue 2.4s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+@keyframes blink-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.blink-caret {
+  animation: blink-caret 1.1s step-end infinite;
+}
+
+@keyframes scan-y {
+  0% {
+    top: -12%;
+  }
+  100% {
+    top: 112%;
+  }
+}
+.scanline {
+  animation: scan-y 7s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 2.6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+.flow-dash {
+  animation: flow-dash 1.4s linear infinite;
+}
+
+/* hero fade helper — tracks the theme canvas color */
+.hero-fade-bottom {
+  background: linear-gradient(to bottom, transparent 55%, rgba(var(--fade-bg), 0.92) 100%);
+}
+.hero-fade-top {
+  background: linear-gradient(to top, transparent 62%, rgba(var(--fade-bg), 0.85) 100%);
+}
+
+/* ---------- Aurora mesh (hero stage background) ----------
+ * Four slow-drifting monochrome blobs (pure black & white — soft white
+ * light on the dark theme, gentle gray shading on the light one) over
+ * the theme canvas. Only transform is animated (compositor-only), so it
+ * stays silky. Brand color lives exclusively in content/UI elements. */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.aurora-clear {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 64% 52% at 50% 42%, var(--aur-clear) 0%, transparent 100%);
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+  pointer-events: none;
+}
+.aurora-b1 {
+  width: 62vmax;
+  height: 62vmax;
+  left: -8vmax;
+  top: -22vmax;
+  background: radial-gradient(closest-side, var(--aur-1) 0%, transparent 100%);
+  animation: aurora-drift-1 26s ease-in-out infinite alternate;
+}
+.aurora-b2 {
+  width: 52vmax;
+  height: 52vmax;
+  right: -14vmax;
+  top: 2vmax;
+  background: radial-gradient(closest-side, var(--aur-2) 0%, transparent 100%);
+  animation: aurora-drift-2 34s ease-in-out infinite alternate;
+}
+.aurora-b3 {
+  width: 58vmax;
+  height: 58vmax;
+  left: -12vmax;
+  bottom: -26vmax;
+  background: radial-gradient(closest-side, var(--aur-3) 0%, transparent 100%);
+  animation: aurora-drift-3 30s ease-in-out infinite alternate;
+}
+.aurora-b4 {
+  width: 46vmax;
+  height: 46vmax;
+  right: -6vmax;
+  bottom: -18vmax;
+  background: radial-gradient(closest-side, var(--aur-4) 0%, transparent 100%);
+  animation: aurora-drift-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift-1 {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(9vw, 7vh, 0) scale(1.14); }
+}
+@keyframes aurora-drift-2 {
+  from { transform: translate3d(0, 0, 0) scale(1.08); }
+  to { transform: translate3d(-8vw, 10vh, 0) scale(0.94); }
+}
+@keyframes aurora-drift-3 {
+  from { transform: translate3d(0, 0, 0) scale(1.05); }
+  to { transform: translate3d(10vw, -8vh, 0) scale(0.92); }
+}
+@keyframes aurora-drift-4 {
+  from { transform: translate3d(0, 0, 0) scale(0.95); }
+  to { transform: translate3d(-9vw, -9vh, 0) scale(1.12); }
+}
+
+/* Smooth theme switch — applied for a beat while the toggle flips */
+html.theme-anim,
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease,
+    fill 0.45s ease,
+    stroke 0.45s ease,
+    stop-color 0.45s ease,
+    opacity 0.45s ease,
+    box-shadow 0.45s ease !important;
+  transition-delay: 0s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot,
+  .pulse-dot-blue,
+  .floaty,
+  .blink-caret,
+  .scanline,
+  .pulse-ring,
+  .flow-dash,
+  .aurora-b1,
+  .aurora-b2,
+  .aurora-b3,
+  .aurora-b4 {
+    animation: none !important;
+  }
+}

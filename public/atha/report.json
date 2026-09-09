@@ -1,0 +1,248 @@
+{
+ "success": true,
+ "generated_by": "ATHA Security OS v0.10 \u2014 real agents, real target",
+ "agents_registered": 66,
+ "real_mode": true,
+ "target": "protected-tree",
+ "scans": {
+  "network": {
+   "findings": [
+    {
+     "severity": "medium",
+     "type": "real_port_open",
+     "component": "protected_target",
+     "target": "127.0.0.1:3000",
+     "description": "REAL port 3000 on 127.0.0.1 is OPEN \u2014 confirm this exposure is intended",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "severity": "info",
+     "type": "real_port_closed",
+     "component": "protected_target",
+     "target": "127.0.0.1:5000",
+     "description": "REAL port 5000 on 127.0.0.1 is closed",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "severity": "medium",
+     "type": "real_plain_http_endpoint",
+     "component": "protected_target",
+     "target": "http://localhost:3000",
+     "description": "REAL endpoint responds over plain HTTP (status 200) \u2014 no TLS locally",
+     "real_action": true,
+     "simulated": false
+    }
+   ],
+   "total": 3,
+   "real_action": true,
+   "simulated": false
+  },
+  "secrets": {
+   "findings": [
+    {
+     "severity": "medium",
+     "type": "secret_in_file:generic_api_key_assign",
+     "target": "skills/xlsx/scenes/advanced.md",
+     "line": 155,
+     "masked_match": "passwo\u2026ord'",
+     "real_action": true,
+     "simulated": false,
+     "component": "skills/xlsx/scenes/advanced.md"
+    },
+    {
+     "severity": "medium",
+     "type": "secret_in_file:generic_api_key_assign",
+     "target": "skills/web-shader-extractor/references/unicorn-studio.md",
+     "line": 19,
+     "masked_match": "API_KE\u2026\u63d0\u53d6>\"",
+     "real_action": true,
+     "simulated": false,
+     "component": "skills/web-shader-extractor/references/unicorn-studio.md"
+    }
+   ],
+   "total": 2,
+   "files_scanned": 1026,
+   "note": "evidence masked \u2014 full match values are never recorded",
+   "real_action": true,
+   "simulated": false
+  },
+  "malware": {
+   "action": "scan_malware",
+   "success": true,
+   "real_action": true,
+   "simulated": false,
+   "files_scanned": 160,
+   "findings_count": 2,
+   "findings": [
+    {
+     "severity": "medium",
+     "type": "malware:curl_sh_piped",
+     "target": "public/atha/report.json",
+     "line": 84,
+     "masked_evidence": "curl \\\\\\\\u2026 | sh",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "severity": "medium",
+     "type": "malware:curl_sh_piped",
+     "target": "public/atha/report.json",
+     "line": 93,
+     "masked_evidence": "curl \\\\u2026 | sh",
+     "real_action": true,
+     "simulated": false
+    }
+   ],
+   "by_severity": {
+    "critical": 0,
+    "high": 0,
+    "medium": 2
+   },
+   "flagged_files": [
+    "public/atha/report.json"
+   ],
+   "signature_count": 23,
+   "dirs_skipped": [
+    "examples",
+    "mini-services",
+    "skills"
+   ],
+   "files_skipped": [
+    "worklog.md"
+   ],
+   "note": "evidence masked \u2014 full payload content is never recorded",
+   "scanned_at": "2026-09-07T12:16:50.551352+00:00"
+  },
+  "vulnerabilities": {
+   "findings": [
+    {
+     "finding_id": "VULN-REAL-001",
+     "severity": "low",
+     "target": "package.json",
+     "description": "npm lifecycle script 'postinstall' present \u2014 review it for supply-chain safety",
+     "cwe": "",
+     "component": "protected_target",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "finding_id": "VULN-REAL-002",
+     "severity": "high",
+     "target": ".env",
+     "description": ".env is readable beyond the owner (mode 0o755)",
+     "cwe": "",
+     "component": "protected_target",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "finding_id": "VULN-REAL-003",
+     "severity": "medium",
+     "target": "skills/xlsx/scenes/advanced.md",
+     "description": "Secret-like content in skills/xlsx/scenes/advanced.md:155 (secret_in_file:generic_api_key_assign)",
+     "cwe": "CWE-798",
+     "component": "protected_target",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "finding_id": "VULN-REAL-004",
+     "severity": "medium",
+     "target": "skills/web-shader-extractor/references/unicorn-studio.md",
+     "description": "Secret-like content in skills/web-shader-extractor/references/unicorn-studio.md:19 (secret_in_file:generic_api_key_assign)",
+     "cwe": "CWE-798",
+     "component": "protected_target",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "finding_id": "VULN-REAL-005",
+     "severity": "medium",
+     "target": "public/atha/report.json",
+     "description": "Malware signature in public/atha/report.json:84 (malware:curl_sh_piped)",
+     "cwe": "CWE-506",
+     "component": "protected_target",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "finding_id": "VULN-REAL-006",
+     "severity": "medium",
+     "target": "public/atha/report.json",
+     "description": "Malware signature in public/atha/report.json:93 (malware:curl_sh_piped)",
+     "cwe": "CWE-506",
+     "component": "protected_target",
+     "real_action": true,
+     "simulated": false
+    },
+    {
+     "finding_id": "VULN-REAL-007",
+     "severity": "medium",
+     "target": "port:3000",
+     "description": "Real port 3000 open on 127.0.0.1",
+     "cwe": "CWE-284",
+     "component": "protected_target",
+     "real_action": true,
+     "simulated": false
+    }
+   ],
+   "total": 7,
+   "real_action": true,
+   "simulated": false
+  }
+ },
+ "drift": {
+  "drift_detected": false,
+  "modified": [],
+  "added": [],
+  "removed": [],
+  "files_scanned": 1152
+ },
+ "sensitive_inventory": {
+  "items": [
+   {
+    "rel": ".env",
+    "size": 50,
+    "mode": "0o755",
+    "world_readable": true,
+    "group_readable": true,
+    "sha256_prefix": "be8e1a92feff8f6c"
+   },
+   {
+    "rel": "db/custom.db",
+    "size": 12288,
+    "mode": "0o644",
+    "world_readable": true,
+    "group_readable": true,
+    "sha256_prefix": "f428c17f2e27f74c"
+   }
+  ],
+  "risky_world_readable": [
+   ".env",
+   "db/custom.db"
+  ]
+ },
+ "backups": [],
+ "defense": {
+  "mode": "active-defense",
+  "layers": {
+   "canary_decoys": true,
+   "realtime_watcher": false,
+   "watchdog": false,
+   "auto_quarantine": true,
+   "immutable_baseline": true,
+   "honeypot": true,
+   "sealed_state": true
+  },
+  "aggregate": {
+   "canaries_healthy": 3,
+   "honeypot_hits_total": 0,
+   "ips_blocked": 0,
+   "state_seals_ok": 3,
+   "state_seals_compromised": 0
+  },
+  "at": "2026-09-07T12:16:51.557903+00:00"
+ }
+}

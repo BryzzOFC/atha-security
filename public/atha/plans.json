@@ -1,0 +1,121 @@
+{
+ "schema": "atha.plans/1",
+ "version": "0.11.1",
+ "generated_at": 1788783248,
+ "currency_order": [
+  "EUR",
+  "USD",
+  "BRL"
+ ],
+ "feature_order": [
+  "manual_scan",
+  "baseline_verify",
+  "canary_manual",
+  "drift_manual",
+  "email_support",
+  "watcher_rt",
+  "auto_quarantine",
+  "canary_rt",
+  "sealed_state",
+  "honeypot_ipban",
+  "watchdog",
+  "stealth_mode",
+  "offhost_baseline",
+  "managed_report",
+  "direct_support"
+ ],
+ "plans": [
+  {
+   "id": "basic",
+   "order": 1,
+   "sites": 1,
+   "price": {
+    "EUR": {
+     "monthly": 19,
+     "annual": 190
+    },
+    "USD": {
+     "monthly": 19,
+     "annual": 190
+    },
+    "BRL": {
+     "monthly": 99,
+     "annual": 990
+    }
+   },
+   "features": [
+    "manual_scan",
+    "baseline_verify",
+    "canary_manual",
+    "drift_manual",
+    "email_support"
+   ]
+  },
+  {
+   "id": "essencial",
+   "order": 2,
+   "sites": 3,
+   "price": {
+    "EUR": {
+     "monthly": 49,
+     "annual": 490
+    },
+    "USD": {
+     "monthly": 54,
+     "annual": 540
+    },
+    "BRL": {
+     "monthly": 259,
+     "annual": 2590
+    }
+   },
+   "features": [
+    "manual_scan",
+    "baseline_verify",
+    "canary_manual",
+    "drift_manual",
+    "email_support",
+    "watcher_rt",
+    "auto_quarantine",
+    "canary_rt",
+    "sealed_state"
+   ]
+  },
+  {
+   "id": "full",
+   "order": 3,
+   "sites": 10,
+   "price": {
+    "EUR": {
+     "monthly": 65,
+     "annual": 650
+    },
+    "USD": {
+     "monthly": 75,
+     "annual": 755
+    },
+    "BRL": {
+     "monthly": 389,
+     "annual": 3900
+    }
+   },
+   "features": [
+    "manual_scan",
+    "baseline_verify",
+    "canary_manual",
+    "drift_manual",
+    "email_support",
+    "watcher_rt",
+    "auto_quarantine",
+    "canary_rt",
+    "sealed_state",
+    "honeypot_ipban",
+    "watchdog",
+    "stealth_mode",
+    "offhost_baseline",
+    "managed_report",
+    "direct_support"
+   ]
+  }
+ ]
+}
