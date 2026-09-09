@@ -1,7 +1,7 @@
 {
  "schema": "atha.plans/1",
- "version": "0.11.1",
- "generated_at": 1788783248,
+ "version": "0.13.0",
+ "generated_at": 1788972259,
  "currency_order": [
   "EUR",
   "USD",
